@@ -256,9 +256,11 @@ class App extends Component {
     time: 60,
     imageUrl: imagesList[0].imageUrl,
   }
+
   componentDidMount() {
     this.timerId = setInterval(this.statusChange, 1000)
   }
+
   statusChange = () => {
     const {time} = this.state
     if (time !== 0) {
@@ -268,6 +270,7 @@ class App extends Component {
       this.setState({isTrue: true})
     }
   }
+
   clickTab = tabId => {
     this.setState({category: tabId})
   }
@@ -290,9 +293,8 @@ class App extends Component {
       clearInterval(this.timerId)
       this.setState({isTrue: true})
     }
-
-    console.log('Clicked image:', thumbnailUrl)
   }
+
   playAgain = () => {
     this.setState({
       score: 0,
